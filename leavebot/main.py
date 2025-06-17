@@ -1,7 +1,14 @@
 import streamlit as st
 import json
 import os
+import sys
 from urllib.parse import parse_qs
+
+# Allow running this script directly by ensuring the package root is on sys.path
+if __name__ == "__main__" and os.path.basename(os.getcwd()) != "leavebot":
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from leavebot.domain.leave_helpers import LeaveHelpers
 from leavebot.domain.employee_helpers import EmployeeHelpers
 from leavebot.core.search_embeddings import search_doc_knowledge
