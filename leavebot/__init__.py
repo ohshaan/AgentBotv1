@@ -1,0 +1,2 @@
+# LeaveBot package initialization
+
